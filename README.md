@@ -14,11 +14,7 @@
 
 **技术栈 与 开发工具:**
 
-<code><img height="20" src="./JavaScript.png"></code>
-<code><img height="20" src="./typescript.png"></code>
-<code><img height="20" src="./Vue.png"></code>
-<code><img height="20" src="./git.png"></code>
-<code><img height="20" src="./Webstorm.png"></code>
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=nevertoday)](https://github.com/anuraghazra/github-readme-stats)
 
 **我的开源项目:**
 
