@@ -1,29 +1,41 @@
-### Hey，我是神奇的人类
+### Hi there 👋 
+### This is Fernando Roldán!
+
+[![Github](https://img.shields.io/badge/-Github-000?style=flat&logo=Github&logoColor=white)](https://github.com/FernandoRoldan93)
+[![Linkedin](https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/froldanzafra/)
+[![Gmail](https://img.shields.io/badge/-Gmail-c14438?style=flat&logo=Gmail&logoColor=white)](mailto:Fernando.Roldan.Zafra@gmail.com)
+
+Welcome to my Github page! I am Fernando and I am currently finishing my Computer Engineering Master degree at the university of Granada!  
+
+<img align="right" alt="img" src="https://github.com/FernandoRoldan93/FernandoRoldan93/blob/master/cover_image.jpg" width="50%" height="auto" />
+
+
+#### 🌱 Things I am currently working on: 
+- Finish my Computer Engineering Master Degree  
+- Taking online courses about Data Science and Machine Learning 
+- Business practices on [bi4 Group Spain](https://github.com/bi4group) 🚀 *coming soon*
+
+#### :muscle: Things I am challenging myself with:
+- Waking up earlier to make good use of the day
+- Coding at least 4 hours a day
+- Exercising 3 days a week
+- Improving my CV with some education apart from university
+
+#### :computer: Programming languages and tools: 
+<p>
+	<img width="50%" align="right" src="https://github-readme-stats.vercel.app/api?username=FernandoRoldan93&show_icons=true&hide_border=true" />
+
+<code><img width="10%" src="https://www.vectorlogo.zone/logos/java/java-ar21.svg"></code>
+<code><img width="10%" src="https://www.vectorlogo.zone/logos/python/python-ar21.svg"></code>
+<code><img width="8%" src="https://www.vectorlogo.zone/logos/r-project/r-project-icon.svg"></code>
 <br />
+<code><img width="10%" src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-ar21.svg"></code>
+<code><img width="10%" src="https://www.vectorlogo.zone/logos/mysql/mysql-ar21.svg"></code>
+<code><img width="10%" src="https://www.vectorlogo.zone/logos/mongodb/mongodb-ar21.svg"></code>
+<br />
+<code><img width="10%" src="https://www.vectorlogo.zone/logos/apache_spark/apache_spark-ar21.svg"></code>
+<code><img width="10%" src="https://www.vectorlogo.zone/logos/apache_hadoop/apache_hadoop-ar21.svg"></code>
+<code><img width="10%" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-ar21.svg"></code>
+</p>
 
-你好， 我是 [神奇的程序员](https://juejin.cn/user/3984285870859614) ，出生于2000年，一位有3年工作经验的前端开发工程师。
-
-你可能很好奇我的经历，正常来讲，这个年龄应该大学刚毕业，而你就已经有3年的工作经验了。此事说来话长，感兴趣的开发者请移步：[一枚19岁程序员的自学之路](https://juejin.cn/post/6844904025746309133)
-
-
-  <img align="right" alt="GIF" src="./code.gif" width="430" height="100%" />
-
-- 💬 如果你对我感兴趣，可以加我[微信](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6a64ceb9e91949f3b643a8cf603f983b~tplv-k3u1fbpfcp-watermark.image) 进一步交流。
-- 📫 我的邮箱: [1195419506@qq.com](mailto:1195419506@qq.com);
-- 📝 [我的掘金(开源社区)主页](https://juejin.cn/user/3984285870859614)
-
-**技术栈 与 开发工具:**
-
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=nevertoday)](https://github.com/anuraghazra/github-readme-stats)
-
-**我的开源项目:**
-
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=likaia&repo=chat-system)](https://github.com/likaia/chat-system)
-
-----------
-
-**个人网站与技术社区:**
-
-* [神奇的程序员-个人网站](https://www.kaisir.cn/)
-* [神奇的程序员-掘金](https://juejin.cn/user/3984285870859614)
-* [神奇的程序员-微信公众号](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8b7566ab57814aad861b378882c1ee58~tplv-k3u1fbpfcp-watermark.image?)
+<sub>Credits to: <br/>[IreneHerrerart](https://www.artstation.com/ireneherrera) for the wonderfull [picture](https://github.com/FernandoRoldan93/FernandoRoldan93/blob/master/cover_image.jpg)</sub>
