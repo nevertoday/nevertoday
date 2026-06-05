@@ -5,7 +5,18 @@ Hi, I am Jack. I build small, practical tools for AI-assisted publishing, visual
 你好，我是陈小东。
 我用 HTML5、Chrome 扩展、Agent Skills 和设计资料库，把内容生产、视觉判断、上架审核、素材整理这些反复出现的工作，做成可以复用、可以检查、可以继续迭代的小工具。
 
-[GitHub](https://github.com/nevertoday) · [X / Twitter](https://x.com/xiaoxiaodong01)
+<p align="center">
+  <a href="https://x.com/xiaoxiaodong01"><img src="https://img.shields.io/badge/X-@xiaoxiaodong01-000000?style=for-the-badge&logo=x&logoColor=white" alt="X @xiaoxiaodong01" /></a>
+  <a href="https://github.com/nevertoday"><img src="https://img.shields.io/badge/GitHub-@nevertoday-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub @nevertoday" /></a>
+  <a href="https://github.com/nevertoday/xposter/issues"><img src="https://img.shields.io/badge/Feedback-xPoster%20Issues-0969da?style=for-the-badge&logo=github&logoColor=white" alt="xPoster issues" /></a>
+</p>
+
+<p align="center">
+  <strong>Contact / 联系我：</strong>
+  <a href="https://x.com/xiaoxiaodong01">X @xiaoxiaodong01</a>
+  ·
+  <a href="https://github.com/nevertoday">GitHub @nevertoday</a>
+</p>
 
 ---
 
@@ -51,6 +62,20 @@ Hi, I am Jack. I build small, practical tools for AI-assisted publishing, visual
 - Turning AI image production into clearer repeatable Skills and review systems.
 - Building practical Chrome extension utilities, including submission and privacy workflows.
 - Expanding open visual reference libraries around color, layout, and editorial design.
+
+---
+
+## Contact
+
+## 联系方式
+
+**Fastest way to reach me:** [X / Twitter @xiaoxiaodong01](https://x.com/xiaoxiaodong01)
+
+**Project feedback:** open an issue in the relevant repository, especially [xPoster Issues](https://github.com/nevertoday/xposter/issues) for Markdown-to-X publishing.
+
+**最快联系入口：** [X / Twitter @xiaoxiaodong01](https://x.com/xiaoxiaodong01)
+
+**项目反馈：** 可以在对应仓库提交 Issue；如果是 Markdown 发布到 X Articles 相关问题，优先看 [xPoster Issues](https://github.com/nevertoday/xposter/issues)。
 
 ---
 
