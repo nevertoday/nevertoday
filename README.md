@@ -1,41 +1,65 @@
-### Hi there 👋 
-### This is Fernando Roldán!
+# nevertoday
 
-[![Github](https://img.shields.io/badge/-Github-000?style=flat&logo=Github&logoColor=white)](https://github.com/FernandoRoldan93)
-[![Linkedin](https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/froldanzafra/)
-[![Gmail](https://img.shields.io/badge/-Gmail-c14438?style=flat&logo=Gmail&logoColor=white)](mailto:Fernando.Roldan.Zafra@gmail.com)
+Hi, I am Jack. I build small, practical tools for AI-assisted publishing, visual workflows, Chrome extensions, and creator operations.
 
-Welcome to my Github page! I am Fernando and I am currently finishing my Computer Engineering Master degree at the university of Granada!  
+你好，我是陈小东。
+我用 HTML5、Chrome 扩展、Agent Skills 和设计资料库，把内容生产、视觉判断、上架审核、素材整理这些反复出现的工作，做成可以复用、可以检查、可以继续迭代的小工具。
 
-<img align="right" alt="img" src="https://github.com/FernandoRoldan93/FernandoRoldan93/blob/master/cover_image.jpg" width="50%" height="auto" />
+[GitHub](https://github.com/nevertoday) · [X / Twitter](https://x.com/xiaoxiaodong01)
 
+---
 
-#### 🌱 Things I am currently working on: 
-- Finish my Computer Engineering Master Degree  
-- Taking online courses about Data Science and Machine Learning 
-- Business practices on [bi4 Group Spain](https://github.com/bi4group) 🚀 *coming soon*
+## What I Am Building
 
-#### :muscle: Things I am challenging myself with:
-- Waking up earlier to make good use of the day
-- Coding at least 4 hours a day
-- Exercising 3 days a week
-- Improving my CV with some education apart from university
+## 我正在做什么
 
-#### :computer: Programming languages and tools: 
+- **Publishing workflows**: move Markdown drafts, local files, tables, images, and embeds into real publishing surfaces without rebuilding everything by hand.
+- **AI visual production**: turn image tasks, prompts, references, and review criteria into clearer workflows and reusable Skills.
+- **Chrome extension tooling**: build and ship browser extensions, then package the submission materials, privacy notes, and review evidence.
+- **Design reference systems**: collect color, layout, and visual structure references so design decisions have reusable material behind them.
+
+---
+
+## Featured Projects
+
+| Project | 中文说明 | English summary |
+| --- | --- | --- |
+| [xPoster](https://github.com/nevertoday/xposter) | 把 Markdown 长文写入 X Articles 的 Chrome 扩展，支持图片、表格、嵌入、批量草稿、本地记录和发布前检查。 | A local-first Chrome extension for moving Markdown drafts into X Articles with media, tables, embeds, batch drafts, and preflight checks. |
+| [小小东](https://github.com/nevertoday/xiaoxiaodong) | 围绕 AI 图片任务、提示词、审美判断和交付流程的知识星球入口与 Skills 集合。 | A home for AI image workflows, prompt direction, visual judgment, delivery checklists, and reusable agent Skills. |
+| [Chrome Store Submission](https://github.com/nevertoday/chrome-store-submission) | 分析 Chrome 扩展源码，生成 Chrome Web Store 上架资料、权限说明、隐私政策、截图路径和 ZIP 清单的 Agent Skill。 | An Agent Skill that prepares Chrome Web Store submission copy, permission explanations, privacy notes, screenshots, and packaging checklists from extension source code. |
+| [中国传统配色](https://github.com/nevertoday/zhongguo-traditional-colors) | 中华传统色色卡资料馆，整理色名、HEX、RGB、CMYK、配色推荐、气质关键词和图片资源。 | A Chinese traditional color archive for browsing, downloading, studying, and reusing color cards and palette references. |
+| [100 种排版](https://github.com/nevertoday/100-layout-compositions) | 100 张排版构图参考图合集，适合做视觉练习、版式拆解和创作参考。 | A gallery of 100 layout composition references for visual study, layout analysis, and creative direction. |
+
+---
+
+## Working Principles
+
+## 工作方式
+
+- Ship tools around real friction, not abstract feature lists.
+- Keep source workflows inspectable: local-first, dependency-light, and easy to debug where possible.
+- Treat design references as working material, not decoration.
+- Use AI agents as process helpers: they should gather evidence, reduce repetitive work, and leave clear review points.
+
+---
+
+## Current Focus
+
+## 近期重点
+
+- Making Markdown-to-publishing workflows more reliable for creators.
+- Turning AI image production into clearer repeatable Skills and review systems.
+- Building practical Chrome extension utilities, including submission and privacy workflows.
+- Expanding open visual reference libraries around color, layout, and editorial design.
+
+---
+
+## Links
+
+- Chrome Web Store: [xPoster](https://chromewebstore.google.com/detail/xposter/iimkimodgdjnnmdopeolboakhjmhfbbj?authuser=0&hl=zh-CN)
+- Color archive: [中国传统配色在线访问](https://nevertoday.github.io/zhongguo-traditional-colors/)
+
 <p>
-	<img width="50%" align="right" src="https://github-readme-stats.vercel.app/api?username=FernandoRoldan93&show_icons=true&hide_border=true" />
-
-<code><img width="10%" src="https://www.vectorlogo.zone/logos/java/java-ar21.svg"></code>
-<code><img width="10%" src="https://www.vectorlogo.zone/logos/python/python-ar21.svg"></code>
-<code><img width="8%" src="https://www.vectorlogo.zone/logos/r-project/r-project-icon.svg"></code>
-<br />
-<code><img width="10%" src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-ar21.svg"></code>
-<code><img width="10%" src="https://www.vectorlogo.zone/logos/mysql/mysql-ar21.svg"></code>
-<code><img width="10%" src="https://www.vectorlogo.zone/logos/mongodb/mongodb-ar21.svg"></code>
-<br />
-<code><img width="10%" src="https://www.vectorlogo.zone/logos/apache_spark/apache_spark-ar21.svg"></code>
-<code><img width="10%" src="https://www.vectorlogo.zone/logos/apache_hadoop/apache_hadoop-ar21.svg"></code>
-<code><img width="10%" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-ar21.svg"></code>
+  <img height="150" src="https://github-readme-stats.vercel.app/api?username=nevertoday&show_icons=true&hide_border=true&hide_title=true" alt="GitHub stats for nevertoday" />
+  <img height="150" src="https://github-readme-stats.vercel.app/api/top-langs/?username=nevertoday&layout=compact&hide_border=true" alt="Top languages for nevertoday" />
 </p>
-
-<sub>Credits to: <br/>[IreneHerrerart](https://www.artstation.com/ireneherrera) for the wonderfull [picture](https://github.com/FernandoRoldan93/FernandoRoldan93/blob/master/cover_image.jpg)</sub>
