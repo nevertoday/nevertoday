@@ -1,93 +1,66 @@
-# nevertoday
+# 小小东 · Xiaoxiaodong
 
-Hi, I am Jack. I build small, practical tools for AI-assisted publishing, visual workflows, Chrome extensions, and creator operations.
+I’m **小小东** — an HTML5 coder and independent maker building practical tools at the intersection of AI, publishing, visual design, and browser workflows.
 
-你好，我是陈小东。
-我用 HTML5、Chrome 扩展、Agent Skills 和设计资料库，把内容生产、视觉判断、上架审核、素材整理这些反复出现的工作，做成可以复用、可以检查、可以继续迭代的小工具。
+你好，我是**小小东**。
+
+我把那些“每次都要重新做一遍”的事情，做成可以复用、可以检查、可以继续迭代的开源工具：从 Markdown 写作与发布，到 AI 图像生成与审美判断；从 Chrome 扩展与隐私说明，到 Agent Skills、设计资料库和个人创作系统。
+
+我的兴趣不只是让 AI 生成结果，而是把一个模糊想法，变成一条能真正完成工作的流程。
 
 <p align="center">
   <a href="https://x.com/xiaoxiaodong01"><img src="https://img.shields.io/badge/X-@xiaoxiaodong01-000000?style=for-the-badge&logo=x&logoColor=white" alt="X @xiaoxiaodong01" /></a>
-  <a href="#contact--%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><img src="https://img.shields.io/badge/WeChat-newbe2012-07C160?style=for-the-badge&logo=wechat&logoColor=white" alt="WeChat newbe2012" /></a>
   <a href="https://github.com/nevertoday"><img src="https://img.shields.io/badge/GitHub-@nevertoday-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub @nevertoday" /></a>
-  <a href="https://github.com/nevertoday/xposter/issues"><img src="https://img.shields.io/badge/Feedback-xPoster%20Issues-0969da?style=for-the-badge&logo=github&logoColor=white" alt="xPoster issues" /></a>
-</p>
-
-<p align="center">
-  <strong>Contact / 联系我：</strong>
-  <a href="https://x.com/xiaoxiaodong01">X @xiaoxiaodong01</a>
-  ·
-  WeChat: <strong>newbe2012</strong>
-  ·
-  <a href="https://github.com/nevertoday">GitHub @nevertoday</a>
+  <a href="https://chenx123.com"><img src="https://img.shields.io/badge/Website-chenx123.com-2563eb?style=for-the-badge&logo=googlechrome&logoColor=white" alt="chenx123.com" /></a>
 </p>
 
 ---
 
-## What I Am Building / 我正在做什么
+## What I Build / 我在做什么
 
-- **Publishing workflows**: move Markdown drafts, local files, tables, images, and embeds into real publishing surfaces without rebuilding everything by hand.
-- **AI visual production**: turn image tasks, prompts, references, and review criteria into clearer workflows and reusable Skills.
-- **Chrome extension tooling**: build and ship browser extensions, then package the submission materials, privacy notes, and review evidence.
-- **Design reference systems**: collect color, layout, and visual structure references so design decisions have reusable material behind them.
+- **AI-assisted publishing** — 把 Markdown、图片、表格、嵌入内容和本地素材，接入真实的内容发布流程。
+- **Agent Skills** — 把写作蒸馏、视觉生成、图片整理、任务提醒、上架审核等经验，封装成可调用、可复用的 Skills。
+- **Visual systems** — 用一组持续迭代的视觉 Panel，把照片、构图、色彩、留白和叙事，转成更明确的图像创作方法。
+- **Browser tools** — 制作轻量的 Chrome 扩展与网页工具，解决发布、整理、批处理和创作者日常操作中的具体摩擦。
+- **Open reference libraries** — 整理传统色、版式、构图和视觉资料，让灵感可以被检索、学习和再次使用。
 
----
+## Selected Projects / 代表项目
 
-## Featured Projects
-
-| Project | 中文说明 | English summary |
-| --- | --- | --- |
-| [xPoster](https://github.com/nevertoday/xposter) | 把 Markdown 长文写入 X Articles 的 Chrome 扩展，支持图片、表格、嵌入、批量草稿、本地记录和发布前检查。 | A local-first Chrome extension for moving Markdown drafts into X Articles with media, tables, embeds, batch drafts, and preflight checks. |
-| [小小东](https://github.com/nevertoday/xiaoxiaodong) | 围绕 AI 图片任务、提示词、审美判断和交付流程的知识星球入口与 Skills 集合。 | A home for AI image workflows, prompt direction, visual judgment, delivery checklists, and reusable agent Skills. |
-| [Chrome Store Submission](https://github.com/nevertoday/chrome-store-submission) | 分析 Chrome 扩展源码，生成 Chrome Web Store 上架资料、权限说明、隐私政策、截图路径和 ZIP 清单的 Agent Skill。 | An Agent Skill that prepares Chrome Web Store submission copy, permission explanations, privacy notes, screenshots, and packaging checklists from extension source code. |
-| [中国传统配色](https://github.com/nevertoday/zhongguo-traditional-colors) | 中华传统色色卡资料馆，整理色名、HEX、RGB、CMYK、配色推荐、气质关键词和图片资源。 | A Chinese traditional color archive for browsing, downloading, studying, and reusing color cards and palette references. |
-| [100 种排版](https://github.com/nevertoday/100-layout-compositions) | 100 张排版构图参考图合集，适合做视觉练习、版式拆解和创作参考。 | A gallery of 100 layout composition references for visual study, layout analysis, and creative direction. |
-
----
+| 项目 | 它解决什么问题 |
+| --- | --- |
+| [xPoster](https://github.com/nevertoday/xposter) | 将 Markdown 长文写入 X Articles，处理图片、表格、代码、嵌入、批量草稿，并在写入前检查真实编辑器状态。 |
+| [xiaoxiaodong](https://github.com/nevertoday/xiaoxiaodong) | 小小东的公开项目主页与创作入口，集中展示开源项目、Skills 和视觉工作流。 |
+| [Writing DNA Skill](https://github.com/nevertoday/writing-dna-skill) | 将一批文章拆解为语言、结构、选题、认知和视觉规则，沉淀成 Agent 可复用的写作风格资产。 |
+| [Chrome Store Submission](https://github.com/nevertoday/chrome-store-submission) | 从扩展源码整理 Chrome Web Store 上架文案、权限说明、隐私材料、截图清单和发布检查项。 |
+| [xxd-notify](https://github.com/nevertoday/xxd-notify) | 通过 Bark 把长任务的完成、失败、阶段进度或“需要人工决定”提醒发送到 iPhone。 |
+| [350 Layout Compositions](https://github.com/nevertoday/350-layout-compositions) | 收集 350 组来自编辑设计、字体、网格、网页、电影、中国艺术和演示文稿的构图参考。 |
+| [中华传统色](https://github.com/nevertoday/zhongguo-traditional-colors) | 浏览和学习中华传统色，提供色名、色值、色卡与配色参考；也是我最重要的视觉资料库之一。 |
+| [XXD Panels](https://github.com/nevertoday?tab=repositories&q=xxd-panel) | 一套持续扩展的 AI 视觉 Skills：从照片出发，探索纸张、版画、线描、拼贴、构成、插画和叙事等不同视觉方法。 |
 
 ## Toolbox / 常用工具
 
-`HTML5` · `JavaScript` · `Chrome Extensions` · `Markdown` · `Agent Skills` · `AI image workflows` · `GitHub Pages`
+`HTML5` · `JavaScript` · `Python` · `Chrome Extensions` · `Markdown` · `Agent Skills` · `GitHub Pages` · `AI image workflows`
 
----
+## How I Work / 我的工作方式
 
-## Working Principles / 工作方式
+- 从真实的重复劳动开始，而不是从抽象的功能列表开始。
+- 让 AI 负责收集证据、减少机械操作，但把关键判断和最终控制留给人。
+- 优先做本地优先、依赖清晰、方便检查和调试的工具。
+- 把设计参考当作工作材料，而不是装饰；把一次性的经验沉淀成可复用的系统。
 
-- Ship tools around real friction, not abstract feature lists.
-- Keep source workflows inspectable: local-first, dependency-light, and easy to debug where possible.
-- Treat design references as working material, not decoration.
-- Use AI agents as process helpers: they should gather evidence, reduce repetitive work, and leave clear review points.
+## Start Here / 从这里开始
 
----
+- 想把 Markdown 发布到 X Articles：试试 [xPoster](https://github.com/nevertoday/xposter)。
+- 想让 AI 学会一种稳定的写作风格：看看 [Writing DNA Skill](https://github.com/nevertoday/writing-dna-skill)。
+- 想把 AI 图像创作变成可复用流程：浏览 [XXD Panels](https://github.com/nevertoday?tab=repositories&q=xxd-panel) 和 [小小东主页](https://nevertoday.github.io/xiaoxiaodong/)。
+- 想找色彩与构图参考：访问 [中华传统色](https://nevertoday.github.io/zhongguo-traditional-colors/) 和 [350 Layout Compositions](https://github.com/nevertoday/350-layout-compositions)。
 
-## Current Focus / 近期重点
+## Contact / 联系我
 
-- Making Markdown-to-publishing workflows more reliable for creators.
-- Turning AI image production into clearer repeatable Skills and review systems.
-- Building practical Chrome extension utilities, including submission and privacy workflows.
-- Expanding open visual reference libraries around color, layout, and editorial design.
-
----
-
-## Contact / 联系方式
-
-**Fastest way to reach me:** [X / Twitter @xiaoxiaodong01](https://x.com/xiaoxiaodong01)
-
-**WeChat:** `newbe2012`
-
-**Project feedback:** open an issue in the relevant repository, especially [xPoster Issues](https://github.com/nevertoday/xposter/issues) for Markdown-to-X publishing.
-
-**最快联系入口：** [X / Twitter @xiaoxiaodong01](https://x.com/xiaoxiaodong01)
-
-**微信：** `newbe2012`
-
-**项目反馈：** 可以在对应仓库提交 Issue；如果是 Markdown 发布到 X Articles 相关问题，优先看 [xPoster Issues](https://github.com/nevertoday/xposter/issues)。
-
----
-
-## Links
-
-- Chrome Web Store: [xPoster](https://chromewebstore.google.com/detail/xposter/iimkimodgdjnnmdopeolboakhjmhfbbj?authuser=0&hl=zh-CN)
-- Color archive: [中国传统配色在线访问](https://nevertoday.github.io/zhongguo-traditional-colors/)
+- X：[@xiaoxiaodong01](https://x.com/xiaoxiaodong01)
+- WeChat：`newbe2012`
+- Website：[chenx123.com](https://chenx123.com)
+- Project feedback：欢迎在对应仓库提交 Issue；[xPoster Issues](https://github.com/nevertoday/xposter/issues) 是发布工具相关问题的入口。
 
 <p>
   <img height="150" src="https://github-readme-stats.vercel.app/api?username=nevertoday&show_icons=true&hide_border=true&hide_title=true" alt="GitHub stats for nevertoday" />
