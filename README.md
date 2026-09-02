@@ -11,7 +11,7 @@ I’m **小小东**, an independent maker turning creative experience into execu
 <p align="center">
   <a href="https://x.com/xiaoxiaodong01"><img src="https://img.shields.io/badge/X-@xiaoxiaodong01-000000?style=for-the-badge&logo=x&logoColor=white" alt="X @xiaoxiaodong01" /></a>
   <a href="https://github.com/nevertoday"><img src="https://img.shields.io/badge/GitHub-@nevertoday-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub @nevertoday" /></a>
-  <a href="https://chenx123.com"><img src="https://img.shields.io/badge/Website-chenx123.com-2563eb?style=for-the-badge&logo=googlechrome&logoColor=white" alt="chenx123.com" /></a>
+  <a href="https://xiaoxiaodong.ai"><img src="https://img.shields.io/badge/Website-xiaoxiaodong.ai-2563eb?style=for-the-badge&logo=googlechrome&logoColor=white" alt="xiaoxiaodong.ai" /></a>
 </p>
 
 ---
@@ -59,7 +59,7 @@ I’m **小小东**, an independent maker turning creative experience into execu
 
 - X：[@xiaoxiaodong01](https://x.com/xiaoxiaodong01)
 - WeChat：`newbe2012`
-- Website：[chenx123.com](https://chenx123.com)
+- Website：[xiaoxiaodong.ai](https://xiaoxiaodong.ai)
 - Project feedback：欢迎在对应仓库提交 Issue；[xPoster Issues](https://github.com/nevertoday/xposter/issues) 是发布工具相关问题的入口。
 
 <p>
