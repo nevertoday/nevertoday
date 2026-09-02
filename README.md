@@ -1,12 +1,12 @@
 # 小小东 · Xiaoxiaodong
 
-I’m **小小东** — an HTML5 coder and independent maker building practical tools at the intersection of AI, publishing, visual design, and browser workflows.
+I’m **小小东**, an independent maker turning creative experience into executable AI workflows, reusable Agent Skills, and practical browser tools.
 
 你好，我是**小小东**。
 
-我把那些“每次都要重新做一遍”的事情，做成可以复用、可以检查、可以继续迭代的开源工具：从 Markdown 写作与发布，到 AI 图像生成与审美判断；从 Chrome 扩展与隐私说明，到 Agent Skills、设计资料库和个人创作系统。
+我不只是做 HTML5，也不只是写提示词。我在做的是：把写作、视觉、发布、审核、整理这些创作环节里的经验和判断，拆成 AI 可以执行、人可以检查、以后还能复用的开源系统。
 
-我的兴趣不只是让 AI 生成结果，而是把一个模糊想法，变成一条能真正完成工作的流程。
+这里记录我的实验，也公开我真正用得上的工具：Chrome 扩展、Agent Skills、视觉 Panel、设计资料库，以及围绕创作者日常工作的各种小型自动化。
 
 <p align="center">
   <a href="https://x.com/xiaoxiaodong01"><img src="https://img.shields.io/badge/X-@xiaoxiaodong01-000000?style=for-the-badge&logo=x&logoColor=white" alt="X @xiaoxiaodong01" /></a>
