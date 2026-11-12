@@ -108,6 +108,7 @@ class Doc:
         self._keyframes = {}
         self._classes = {}
         self._n = 0
+        self.phase = 0
 
     def uid(self, prefix):
         self._n += 1
@@ -140,15 +141,17 @@ class Doc:
         return f"<g{attrs}>{''.join(runs)}</g>"
 
     def animate(self, dur, stops, ease="linear", delay=0, extra=""):
-        """stops are (seconds, css declarations) across 0..dur. Returns a class name."""
+        """stops are (seconds, css declarations) across 0..dur. Returns a class name.
+
+        self.phase shifts every animation so a still frame at load shows that moment of the loop."""
         body = "".join(f"{fmt(100 * t / dur, 2)}%{{{decl}}}" for t, decl in stops)
         if body not in self._keyframes:
             self._keyframes[body] = f"k{len(self._keyframes)}"
             self.css.append(f"@keyframes {self._keyframes[body]}{{{body}}}")
-        key = (self._keyframes[body], dur, ease, delay, extra)
+        key = (self._keyframes[body], dur, ease, delay - self.phase, extra)
         if key not in self._classes:
             cls = self._classes[key] = f"a{len(self._classes)}"
-            self.css.append(f".{cls}{{animation:{key[0]} {fmt(dur, 2)}s {ease} {fmt(delay, 2)}s infinite;{extra}}}")
+            self.css.append(f".{cls}{{animation:{key[0]} {fmt(dur, 2)}s {ease} {fmt(key[3], 2)}s infinite;{extra}}}")
         return self._classes[key]
 
     def appear(self, cycle, t_in, t_out=None, fade=0.35, hidden="opacity:0", shown="opacity:1", extra=""):
@@ -157,6 +160,16 @@ class Doc:
         stops = [(0, hidden), (t_in, hidden), (min(t_in + fade, cycle), shown), (t_out, shown),
                  (min(t_out + fade, cycle), hidden), (cycle, hidden)]
         return self.animate(cycle, stops, extra=extra)
+
+    def slot(self, cycle, start, end, fade=0.15):
+        """Visible only during [start, end) of each cycle. Callers give the element opacity 0 unless start is 0."""
+        end = min(end, cycle - fade)
+        if start == 0:
+            stops = [(0, "opacity:1"), (end, "opacity:1"), (end + fade, "opacity:0"), (cycle - fade, "opacity:0"), (cycle, "opacity:1")]
+        else:
+            stops = [(0, "opacity:0"), (start, "opacity:0"), (start + fade, "opacity:1"), (end, "opacity:1"), (end + fade, "opacity:0")]
+            stops += [(cycle, "opacity:0")] if end + fade < cycle else []
+        return self.animate(cycle, stops)
 
     def render(self, body):
         glyph_defs = "".join(
