@@ -108,11 +108,11 @@ PROJECTS = [
         stats=(("3", "lessons"), ("34", "skills"), ("10", "languages")),
         lead_zh="AI 说「修好了」，你一打开，还是坏的。pstack 让它改完先自己试一遍。",
         body_zh="这份教程用大白话把 pstack 讲清楚，不会写代码也能学会。新手入门 3 课、20 分钟上手，平时只记一个命令 /poteto-mode。"
-                "34 个技能逐个拆解写法，首页和入门课有 10 种语言。",
+                "34 个技能都能读原文，每个还挑了几句拆开讲写法。首页和入门课有 10 种语言。",
         lead_en="Your AI says “fixed” and it is still broken. pstack makes it try its own work first.",
         body_en="A plain-language guide to pstack for Claude Code, Cursor and Codex, no coding background needed. "
                 "Three beginner lessons get you going in 20 minutes with one command, /poteto-mode. "
-                "All 34 skills are taken apart line by line, and the start pages come in 10 languages.",
+                "All 34 skills can be read in full, each with a few key lines explained, and the start pages come in 10 languages.",
         cta_en="Start the guide", cta_zh="开始学", cta_url="https://pstack.xiaoxiaodong.ai",
         scene="pstack",
     ),

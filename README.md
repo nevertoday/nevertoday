@@ -50,8 +50,8 @@
 
 <a href="https://github.com/nevertoday/xxd-pstack"><img src="assets/card-xxd-pstack.svg" width="100%" alt="pstack 新手教程：AI 改完先自己试一遍，再来跟你说。 Your AI checks its own work before it says done."></a>
 
-<b>AI 说「修好了」，你一打开，还是坏的。pstack 让它改完先自己试一遍。</b>这份教程用大白话把 pstack 讲清楚，不会写代码也能学会。新手入门 3 课、20 分钟上手，平时只记一个命令 /poteto-mode。34 个技能逐个拆解写法，首页和入门课有 10 种语言。<br>
-<b>Your AI says “fixed” and it is still broken. pstack makes it try its own work first.</b> A plain-language guide to pstack for Claude Code, Cursor and Codex, no coding background needed. Three beginner lessons get you going in 20 minutes with one command, /poteto-mode. All 34 skills are taken apart line by line, and the start pages come in 10 languages.
+<b>AI 说「修好了」，你一打开，还是坏的。pstack 让它改完先自己试一遍。</b>这份教程用大白话把 pstack 讲清楚，不会写代码也能学会。新手入门 3 课、20 分钟上手，平时只记一个命令 /poteto-mode。34 个技能都能读原文，每个还挑了几句拆开讲写法。首页和入门课有 10 种语言。<br>
+<b>Your AI says “fixed” and it is still broken. pstack makes it try its own work first.</b> A plain-language guide to pstack for Claude Code, Cursor and Codex, no coding background needed. Three beginner lessons get you going in 20 minutes with one command, /poteto-mode. All 34 skills can be read in full, each with a few key lines explained, and the start pages come in 10 languages.
 
 <a href="https://pstack.xiaoxiaodong.ai"><img src="https://img.shields.io/badge/%E2%96%B6_Start_the_guide-%E5%BC%80%E5%A7%8B%E5%AD%A6-2BAE85?style=for-the-badge&amp;labelColor=1D1B1C" alt="Start the guide"></a>
 <a href="https://github.com/nevertoday/xxd-pstack"><img src="https://img.shields.io/github/stars/nevertoday/xxd-pstack?style=for-the-badge&amp;label=pstack%20%E6%96%B0%E6%89%8B%E6%95%99%E7%A8%8B&amp;color=D3B21C&amp;labelColor=1D1B1C" alt="pstack 新手教程 on GitHub"></a>
