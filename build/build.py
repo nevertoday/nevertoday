@@ -3,7 +3,7 @@ import urllib.parse
 from html import escape
 from pathlib import Path
 
-from palette import INK, PAPER, TRADITIONAL, both_themes_tone, ink_on, lift_on
+from palette import INK, PAPER, TRADITIONAL, both_themes_tone, lift_on, panel_tone
 from projects import MORE, PROFILE, PROJECTS
 from scenes import SCENES
 from svgdoc import FALLBACKS, Doc, fit, fmt, measure
@@ -23,21 +23,24 @@ def hairline(h):
 
 def card(p):
     doc = Doc(WIDTH, 360, f"{p.name}：{p.slogan_zh} {p.slogan_en}")
-    ink = ink_on(p.color_hex)
+    bg, ink = panel_tone(p.color_hex)
     x, right = 44, 520 - 40
     span = right - x
-    left = [f'<rect width="520" height="360" fill="{p.color_hex}"/>',
-            doc.text(f"№ {p.no} · {p.kind_en}", "mono", 14, x, 58, fill=ink, opacity=".72", tracking=.12),
-            doc.text(f"{p.color_name} {p.color_hex}", "mono", 14, right, 58, fill=ink, opacity=".72", anchor="end"),
+    tag = f"{p.color_name} {p.color_hex}"
+    tag_w = measure(tag, "mono", 15)
+    left = [f'<rect width="520" height="360" fill="{bg}"/>',
+            doc.text(f"№ {p.no} · {p.kind_en}", "mono", 15, x, 58, fill=ink, tracking=.12),
+            f'<rect x="{fmt(right - tag_w - 24)}" y="44" width="16" height="16" fill="{p.color_hex}"/>' if bg != p.color_hex else "",
+            doc.text(tag, "mono", 15, right, 58, fill=ink, anchor="end"),
             doc.text(p.name, "bold", fit(p.name, "bold", 50, span), x, 134, fill=ink),
-            doc.text(p.slogan_zh, "medium", fit(p.slogan_zh, "medium", 22, span), x, 178, fill=ink),
-            doc.text(p.slogan_en, "serif", fit(p.slogan_en, "serif", 21, span), x, 210, fill=ink, opacity=".82")]
+            doc.text(p.slogan_zh, "medium", fit(p.slogan_zh, "medium", 23, span), x, 178, fill=ink),
+            doc.text(p.slogan_en, "serif", fit(p.slogan_en, "serif", 22, span), x, 212, fill=ink)]
     sx = x
     for value, label in p.stats:
         label = label.upper()
         left.append(doc.text(value, "bold", 40, sx, 298, fill=ink))
-        left.append(doc.text(label, "mono", 13, sx, 324, fill=ink, opacity=".72", tracking=.08))
-        sx += max(measure(value, "bold", 40), measure(label, "mono", 13, .08)) + 32
+        left.append(doc.text(label, "mono", 14, sx, 324, fill=ink, tracking=.08))
+        sx += max(measure(value, "bold", 40), measure(label, "mono", 14, .08)) + 32
     assert sx - 32 <= right, f"{p.repo} stats overflow the left panel ({sx - 32:.0f} > {right})"
     scene = SCENES[p.scene](doc, p)
     doc.defs.append('<clipPath id="scene"><rect x="520" width="780" height="360"/></clipPath>')

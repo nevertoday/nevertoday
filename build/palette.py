@@ -47,6 +47,19 @@ def ink_on(bg):
     return max((WHITE, INK), key=lambda fg: contrast(fg, bg))
 
 
+def panel_tone(hex_, min_ratio=7.0):
+    """Shift a panel colour the least distance that lets full-opacity text reach min_ratio."""
+    best = None
+    for ink, toward in ((WHITE, INK), (INK, WHITE)):
+        for step in range(41):
+            bg = mix(hex_, toward, step / 40)
+            if contrast(ink, bg) >= min_ratio:
+                if best is None or step < best[0]:
+                    best = (step, bg, ink)
+                break
+    return best[1], best[2]
+
+
 def mix(a, b, t):
     return to_hex(*(x + (y - x) * t for x, y in zip(rgb(a), rgb(b))))
 
