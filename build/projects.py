@@ -59,7 +59,7 @@ PROJECTS = [
         slogan_zh="出差在外，常用网站和 AI 照常用。",
         slogan_en="Your own line abroad, set up by Codex.",
         stats=(("4", "steps"), ("2", "nodes"), ("0", "server logins")),
-        lead_zh="出差到上网不方便的国家，也能正常用常用的网站和 AI 工具。",
+        lead_zh="出差到上网不方便的国家，常用网站和 AI 工具也能照常用。",
         body_zh="在自己电脑上装好 Codex，买一台海外服务器，让 Codex 按这套方案远程配好，手机和电脑导入订阅就能用。"
                 "服务器上什么都不用装，也不用登录它。主、备两个节点自动切换，证书、规则和 CLIProxyAPI 自动更新，配置每天备份。",
         lead_en="Travel somewhere the internet is restricted and keep using the sites and AI tools you rely on.",
