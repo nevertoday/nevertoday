@@ -31,7 +31,7 @@ def github_html():
     res = subprocess.run(["gh", "api", "markdown", "-f", "mode=markdown", "-f", "context=nevertoday/nevertoday",
                           "-F", f"text=@{ROOT / 'README.md'}"], check=True, capture_output=True, text=True)
     html = res.stdout
-    return re.sub(r'src="[^"]*?/?(assets/[\w.-]+\.svg)"', lambda m: f'src="{(ROOT / m.group(1)).as_uri()}"', html)
+    return re.sub(r'(src|srcset)="[^"]*?/?(assets/[\w.-]+\.svg)"', lambda m: f'{m[1]}="{(ROOT / m[2]).as_uri()}"', html)
 
 
 def page(theme, html):
@@ -88,17 +88,17 @@ def main():
     only = sys.argv[1:]
     OUT.mkdir(parents=True, exist_ok=True)
     report = {}
-    if not only:
+    if not only or "page" in only:
         html = github_html()
         for theme, bg in THEMES.items():
             doc = OUT / f"readme-{theme}.html"
             doc.write_text(page(theme, html), encoding="utf-8")
             png = OUT / f"readme-{theme}.png"
-            chrome(doc.as_uri(), png, CONTENT_WIDTH + 48, 7000)
+            chrome(doc.as_uri(), png, CONTENT_WIDTH + 48, 7000, *(["--force-dark-mode"] if theme == 'dark' else []))
             trim_height(png, bg)
             print(f"page   {png.relative_to(ROOT)}")
     for svg in sorted((ROOT / "assets").glob("*.svg")):
-        if only and svg.stem not in only:
+        if only and svg.stem not in only and "all" not in only:
             continue
         text = svg.read_text(encoding="utf-8")
         loop = loop_length(text)

@@ -6,12 +6,13 @@ PROFILE = {
     "name": "小小东",
     "name_en": "Xiaoxiaodong",
     "handle": "@nevertoday",
-    "slogan_zh": "把创作经验，做成 AI 能执行的开源工具。",
-    "slogan_en": "Turning creative know-how into open-source tools an AI can run.",
-    "intro_zh": "独立开发者。把写作、视觉、配色、排版和出门上网这些事里攒下的经验，做成免费开源、AI 照着就能做的工具。",
-    "intro_en": "Independent maker. I turn what I have learned about writing, visuals, color, layout and staying online abroad into free, open-source tools an AI can follow.",
-    "thanks_zh": "如果这些项目帮到了你，点一颗 star 就是最好的鼓励。",
-    "thanks_en": "If any of these help you, a star is the best encouragement. Thanks for stopping by.",
+    "slogan_zh": "踩过的坑，写成 AI 能照着走的路。",
+    "slogan_en": "Every pit I fell into, written up as a road your AI can walk.",
+    "intro_zh": "独立开发者。写作、配色、排版、出国上网，这些事我都踩过坑。踩完就写下来，做成免费开源的工具，你的 AI 照着就能做好。",
+    "intro_en": "Independent maker. Writing, color, layout, getting online abroad: I have tripped over all of it. "
+                "Each time I write the fix down as a free, open-source tool your AI can follow.",
+    "thanks_zh": "都是免费的。哪个帮到你了，点个 star，或者来 X 上打个招呼。",
+    "thanks_en": "All free. If one helped, leave a star or come say hi on X.",
     "github": "https://github.com/nevertoday",
     "site": "https://xiaoxiaodong.ai",
     "site_label": "xiaoxiaodong.ai",
@@ -59,14 +60,12 @@ PROJECTS = [
         slogan_zh="出差在外，常用网站和 AI 照常用。",
         slogan_en="Your own line abroad, set up by Codex.",
         stats=(("4", "steps"), ("2", "nodes"), ("0", "server logins")),
-        lead_zh="出差到上网不方便的国家，常用网站和 AI 工具也能照常用。",
-        body_zh="在自己电脑上装好 Codex，买一台海外服务器，让 Codex 按这套方案远程配好，手机和电脑导入订阅就能用。"
-                "服务器上什么都不用装，也不用登录它。主、备两个节点自动切换，证书、规则和 CLIProxyAPI 自动更新，配置每天备份。",
-        lead_en="Travel somewhere the internet is restricted and keep using the sites and AI tools you rely on.",
-        body_en="Install Codex on your computer, buy an overseas server, and let Codex set it up remotely from this plan. "
-                "Import one subscription on your phone and computer and you are online. Nothing to install or log into on the server. "
-                "Two nodes fail over to each other, and certificates, rules and CLIProxyAPI update themselves.",
-        cta_en="Open the guide", cta_zh="图文教程", cta_url="https://vps.xiaoxiaodong.ai/",
+        lead_zh='出差到上网不方便的地方，常用的网站和 AI 照样能用。',
+        body_zh='买台海外服务器，剩下的交给 Codex 远程配好。服务器你一次都不用登录，手机和电脑导入一个订阅就能上网。',
+        lead_en='Travel somewhere the internet is locked down, and keep every site and AI tool you use.',
+        body_en='Buy an overseas server and let Codex set it up remotely. You never log into it. Import one subscription on your phone and laptop and you are online.',
+        cta_en='OPEN THE GUIDE', cta_zh='打开图文教程',
+        cta_url='https://vps.xiaoxiaodong.ai/',
         scene="vps",
     ),
     Project(
@@ -75,13 +74,12 @@ PROJECTS = [
         slogan_zh="找到一个颜色，再让它真的用得上。",
         slogan_en="Find a Chinese color, then make it work.",
         stats=(("742", "colors"), ("8,904", "harmony sets"), ("10", "agent skills")),
-        lead_zh="742 种中华传统色，从找到颜色，到搭配、试用、落地。",
-        body_zh="每个颜色一张高清色卡，附 8,904 组配色关系、真实场景预览、shadcn 主题和终端配色。"
-                "另有 10 个 Agent Skills，把配色流程带进 Claude Code。",
-        lead_en="742 Chinese traditional colors, from finding one to pairing, testing and shipping it.",
-        body_en="A high-resolution card for every color, 8,904 harmony sets, real-scene previews, shadcn themes and terminal palettes. "
-                "Ten Agent Skills bring the same workflow into Claude Code.",
-        cta_en="Explore the colors", cta_zh="看色卡", cta_url="https://colors.xiaoxiaodong.ai/",
+        lead_zh='742 种中华传统色，不光好看，还拿来就能用。',
+        body_zh='每个颜色都有高清色卡、8,904 组配色和真实场景预览，还能直接导出 shadcn 主题和终端配色。',
+        lead_en='742 Chinese traditional colors, made to be used, not just admired.',
+        body_en='Each one comes with a full-size card, 8,904 pairings and real-scene previews, plus shadcn themes and terminal palettes ready to export.',
+        cta_en='PICK A COLOR', cta_zh='去挑颜色',
+        cta_url='https://colors.xiaoxiaodong.ai/',
         scene="colors",
     ),
     Project(
@@ -90,14 +88,12 @@ PROJECTS = [
         slogan_zh="350 种排版，按 8 类整理好。",
         slogan_en="350 layout references in 8 families.",
         stats=(("350", "layouts"), ("8", "categories"), ("33", "themes")),
-        lead_zh="从经典构图到网页 UI，350 种排版分好类，能浏览、能搜索、能下载。",
-        body_zh="覆盖构图逻辑、视觉原则、出版广告、字体网格、网页 UI、影视画面、中国传统构图和演示文稿，"
-                "共 8 个一级分类、33 个二级主题。每张都有 1086 × 1448 高清图，附 CSV 和 JSON 目录。",
-        lead_en="350 layout compositions, from classic composition rules to web UI, ready to browse, search and download.",
-        body_en="Eight categories and 33 themes cover composition logic, visual principles, editorial and advertising, "
-                "type and grids, web UI, film frames, Chinese composition and presentations. "
-                "Every image comes at 1086 × 1448, with a CSV and JSON catalog.",
-        cta_en="Browse the catalog", cta_zh="看分类图鉴", cta_url="https://github.com/nevertoday/350-layout-compositions",
+        lead_zh='排版没灵感的时候，翻翻这 350 张。',
+        body_zh='从三分法到网页 UI，分成 8 类 33 个主题。每张都是高清大图，能搜，能下载。',
+        lead_en='Out of layout ideas? Flip through these 350.',
+        body_en='From the rule of thirds to web UI, sorted into 8 families and 33 themes. Every one is a full-size image you can search and download.',
+        cta_en='BROWSE ALL 350', cta_zh='翻图鉴',
+        cta_url='https://github.com/nevertoday/350-layout-compositions/blob/main/docs/350/README.md',
         scene="layouts",
     ),
     Project(
@@ -106,14 +102,12 @@ PROJECTS = [
         slogan_zh="AI 改完先自己试一遍，再来跟你说。",
         slogan_en="Your AI checks its own work before it says done.",
         stats=(("3", "lessons"), ("34", "skills"), ("10", "languages")),
-        lead_zh="AI 说「修好了」，你一打开，还是坏的。pstack 让它改完先自己试一遍。",
-        body_zh="这份教程用大白话把 pstack 讲清楚，不会写代码也能学会。新手入门 3 课、20 分钟上手，平时只记一个命令 /poteto-mode。"
-                "34 个技能都能读原文，每个还挑了几句拆开讲写法。首页和入门课有 10 种语言。",
-        lead_en="Your AI says “fixed” and it is still broken. pstack makes it try its own work first.",
-        body_en="A plain-language guide to pstack for Claude Code, Cursor and Codex, no coding background needed. "
-                "Three beginner lessons get you going in 20 minutes with one command, /poteto-mode. "
-                "All 34 skills can be read in full, each with a few key lines explained, and the start pages come in 10 languages.",
-        cta_en="Start the guide", cta_zh="开始学", cta_url="https://pstack.xiaoxiaodong.ai",
+        lead_zh='AI 说「修好了」，你一打开，还是坏的。',
+        body_zh='pstack 让它改完先自己试一遍。这份教程用大白话讲，3 节课、20 分钟上手，只用记一个命令。',
+        lead_en='Your AI says “fixed”. You open it. Still broken.',
+        body_en='pstack makes it test its own work first. This guide explains it in plain words: three lessons, 20 minutes, one command to remember.',
+        cta_en='START LESSON 1', cta_zh='开始学',
+        cta_url='https://pstack.xiaoxiaodong.ai',
         scene="pstack",
     ),
     Project(
@@ -122,14 +116,12 @@ PROJECTS = [
         slogan_zh="批量清掉图片里的 AI 来源标记和元数据。",
         slogan_en="Strip AI provenance and metadata in bulk.",
         stats=(("7", "formats"), ("0", "pixels re-encoded"), ("0", "python deps")),
-        lead_zh="批量清除图片中的 AI 来源标记和元数据，命令行和 Agent Skill 都能用。",
-        body_zh="用 ExifTool 清理 C2PA / Content Credentials、OpenAI gpt-image 来源信息，以及 EXIF、XMP、IPTC、注释等元数据。"
-                "默认保留 ICC 色彩配置和修改时间，不重编码像素。它只清元数据，去不掉画面里看得见的水印，也不保证清除像素级隐形水印。",
-        lead_en="Batch-remove AI provenance marks and metadata from images, as a CLI or an Agent Skill.",
-        body_en="ExifTool clears C2PA / Content Credentials, OpenAI gpt-image provenance, EXIF, XMP, IPTC and comments. "
-                "ICC profiles and file times stay, and pixels are never re-encoded. "
-                "It cleans metadata only. It cannot remove visible watermarks and does not promise to remove invisible pixel-level ones.",
-        cta_en="How to use it", cta_zh="看用法", cta_url="https://github.com/nevertoday/xxd-strip-ai-meta",
+        lead_zh='图片里藏着「AI 生成」的标记，一条命令批量清掉。',
+        body_zh='C2PA、EXIF、XMP 这些元数据都能清，像素一点不动。画面上看得见的水印它管不了，这点先说清楚。',
+        lead_en='Your images carry hidden “made with AI” tags. One command clears them in bulk.',
+        body_en='C2PA, EXIF, XMP and the rest go, and the pixels stay untouched. Visible watermarks are out of its reach, to be clear.',
+        cta_en='HOW TO USE IT', cta_zh='看用法',
+        cta_url='https://github.com/nevertoday/xxd-strip-ai-meta#readme',
         scene="strip",
     ),
     Project(
@@ -138,13 +130,12 @@ PROJECTS = [
         slogan_zh="输入法的选中块，用品牌原色。",
         slogan_en="Brand colors for your Rime highlight.",
         stats=(("20", "schemes"), ("2", "modes each"), ("2", "platforms")),
-        lead_zh="给鼠须管和小狼毫用的 20 套选中色，每套浅色加夜色。",
-        body_zh="选中块不调色，用公开记载的品牌 HEX，比如蒂芙尼蓝 #81D8D0、爱马仕橙 #F37021、克莱因蓝 #002FA7。"
-                "浅色是纸，夜色是接近黑的底。复制一段 AI 指令就能装，也可以按步骤手动配置。",
-        lead_en="20 highlight color schemes for Squirrel and Weasel, each with a light and a night version.",
-        body_en="The highlight uses the published brand HEX as is, such as Tiffany #81D8D0, Hermès orange #F37021 and Klein blue #002FA7. "
-                "Light themes sit on paper, night themes on near-black. Paste one AI prompt to install, or follow the manual steps.",
-        cta_en="See all 20", cta_zh="看全部配色", cta_url="https://github.com/nevertoday/rime-color-scheme",
+        lead_zh='打字时那个选中块，换成你喜欢的品牌色。',
+        body_zh='蒂芙尼蓝、爱马仕橙、克莱因蓝，20 套品牌原色，每套都有浅色和夜色。复制一段话给 AI，它就帮你装好。',
+        lead_en='Give the highlight you type into a brand color you love.',
+        body_en='Tiffany blue, Hermès orange, Klein blue: 20 schemes in their published colors, each in light and night. Paste one prompt to your AI and it installs them.',
+        cta_en='SEE ALL 20', cta_zh='看全部 20 套',
+        cta_url='https://github.com/nevertoday/rime-color-scheme#readme',
         scene="rime",
     ),
 ]

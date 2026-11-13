@@ -1,20 +1,15 @@
-import base64
-import urllib.parse
 from html import escape
 from pathlib import Path
 
-from palette import INK, PAPER, TRADITIONAL, both_themes_tone, lift_on, panel_tone
+from palette import INK, both_themes_tone, panel_tone
 from projects import MORE, PROFILE, PROJECTS
 from scenes import SCENES
 from svgdoc import FALLBACKS, Doc, fit, fmt, measure
 
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "assets"
-DATA = Path(__file__).parent / "data"
 WIDTH = 1300
 EDGE = "rgba(140,140,140,.38)"
-HAIR = "rgba(140,148,158,.45)"
-DIM = "rgba(249,244,220,.6)"
 
 
 def hairline(h):
@@ -49,102 +44,81 @@ def card(p):
     return doc.render(body)
 
 
+LIGHT = {"text": "#1F2328", "muted": "#59636E", "line": "#D1D9E0"}
+DARK = {"text": "#F0F6FC", "muted": "#9198A1", "line": "#3D444D"}
+
+
+def theme_css(c, inverse):
+    return (f".t{{fill:{c['text']}}}.m{{fill:{c['muted']}}}.l{{stroke:{c['line']}}}"
+            f".bg{{fill:{c['text']}}}.inv{{fill:{inverse['text']}}}")
+
+
+THEME_CSS = theme_css(LIGHT, DARK) + "@media (prefers-color-scheme:dark){" + theme_css(DARK, LIGHT) + "}"
+
+
+def themed_doc(w, h, title):
+    """Transparent SVG whose ink follows the viewer's light or dark scheme."""
+    doc = Doc(w, h, title)
+    doc.css.append(THEME_CSS)
+    return doc
+
+
+def breathing_squares(doc, x_end, y, size=10, gap=8):
+    """The six project colors, lit one after another, ending at x_end."""
+    n = len(PROJECTS)
+    x0 = x_end - n * size - (n - 1) * gap
+    step, cycle = 1.2, 1.2 * n + 2.4
+    out = []
+    for i, p in enumerate(PROJECTS):
+        t = i * step
+        glow = doc.animate(cycle, [(0, "opacity:.35"), (t, "opacity:.35"), (t + .5, "opacity:1"), (t + 1.6, "opacity:1"),
+                                   (t + 2.4, "opacity:.35"), (cycle, "opacity:.35")])
+        out.append(f'<rect class="{glow}" x="{fmt(x0 + i * (size + gap))}" y="{fmt(y)}" width="{size}" height="{size}" '
+                   f'fill="{both_themes_tone(p.color_hex)}"/>')
+    return "".join(out)
+
+
 def header():
-    h = 272
-    title = f"{PROFILE['name']} {PROFILE['name_en']} · {PROFILE['slogan_zh']} {PROFILE['slogan_en']}"
-    doc = Doc(WIDTH, h, title)
-    avatar = base64.b64encode((DATA / "avatar.jpg").read_bytes()).decode()
-    out = [f'<rect width="{WIDTH}" height="{h}" fill="{INK}"/>',
-           f'<image x="40" y="40" width="144" height="144" href="data:image/jpeg;base64,{avatar}"/>',
-           '<rect x="40.5" y="40.5" width="143" height="143" fill="none" stroke="rgba(255,255,255,.18)"/>',
-           doc.text(PROFILE["name"], "bold", 62, 214, 106, fill=PAPER),
-           doc.text(f"{PROFILE['name_en']} · {PROFILE['handle']}", "mono", 18, 216, 144, fill=DIM, tracking=.04),
-           doc.text(PROFILE["site_label"], "mono", 18, 216, 174, fill=DIM, tracking=.04),
-           '<path d="M600 44V180" stroke="rgba(255,255,255,.14)"/>',
-           '<path d="M40 212H1260" stroke="rgba(255,255,255,.1)"/>']
-    rx, rmax = 640, WIDTH - 40
-    out.append(doc.text(PROFILE["slogan_zh"], "medium", fit(PROFILE["slogan_zh"], "medium", 34, rmax - rx), rx, 98, fill=PAPER))
-    en_size = fit(PROFILE["slogan_en"], "serif", 23, rmax - rx)
-    out.append(doc.text(PROFILE["slogan_en"], "serif", en_size, rx, 138, fill=PAPER, opacity=".78"))
-    underline = doc.animate(8, [(0, "transform:scaleX(0)"), (.4, "transform:scaleX(0)"), (1.6, "transform:scaleX(1)"),
-                                (7.2, "transform:scaleX(1)"), (7.8, "transform:scaleX(0)"), (8, "transform:scaleX(0)")],
-                            ease="cubic-bezier(.6,0,.2,1)", extra="transform-box:fill-box;transform-origin:left center")
-    en_w = measure(PROFILE["slogan_en"], "serif", en_size)
-    out.append(f'<rect class="{underline}" x="{rx}" y="150" width="{fmt(en_w)}" height="2" fill="{TRADITIONAL["藤黄"]}"/>')
-
-    size, square = 16, 12
-    entries = [(p, f"{p.no} {p.name}") for p in PROJECTS]
-    widths = [square + 10 + measure(label, "mono", size, .04) for _, label in entries]
-    gap = (WIDTH - 80 - sum(widths)) / (len(entries) - 1)
-    assert gap >= 24, f"header index row too wide (gap {gap:.0f}px)"
-    slot = 1.4
-    cycle = slot * len(entries)
-    x, y = 40, 248
-    for i, ((p, label), w) in enumerate(zip(entries, widths)):
-        walk = doc.slot(cycle, i * slot, (i + 1) * slot)
-        out.append(f'<rect x="{fmt(x)}" y="{y - 12}" width="{square}" height="{square}" fill="{p.color_hex}"/>'
-                   f'{doc.text(label, "mono", size, x + square + 10, y, fill=PAPER, opacity=".85", tracking=.04)}'
-                   f'<rect class="{walk}"{"" if i == 0 else " opacity=\"0\""} x="{fmt(x)}" y="{y + 9}" width="{fmt(w)}" height="2" '
-                   f'fill="{lift_on(p.color_hex, INK, 3)}"/>')
-        x += w + gap
-    out.append(hairline(h))
+    h = 236
+    doc = themed_doc(WIDTH, h, f"{PROFILE['name']} {PROFILE['name_en']} · {PROFILE['slogan_zh']} {PROFILE['slogan_en']}")
+    label = f"{PROFILE['name']}  {PROFILE['name_en'].upper()}  ·  {PROFILE['handle'].upper()}"
+    out = [doc.text(label, "mono", 20, 0, 34, cls="m", tracking=.12),
+           doc.text(PROFILE["slogan_zh"], "bold", fit(PROFILE["slogan_zh"], "bold", 64, WIDTH), 0, 124, cls="t"),
+           doc.text(PROFILE["slogan_en"], "serif", fit(PROFILE["slogan_en"], "serif", 32, WIDTH), 0, 176, cls="m"),
+           f'<path class="l" d="M0 220.5H{WIDTH - 140}"/>',
+           breathing_squares(doc, WIDTH, 215)]
     return doc.render("".join(out))
-
-
-def divider(tones, title):
-    doc = Doc(WIDTH, 44, title)
-    stops = "".join(f'<stop offset="{fmt((i + 1) / (len(tones) + 1), 3)}" stop-color="{t}"/>' for i, t in enumerate(tones))
-    doc.defs.append(f'<linearGradient id="sw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="{tones[0]}" stop-opacity="0"/>'
-                    f'{stops}<stop offset="1" stop-color="{tones[-1]}" stop-opacity="0"/></linearGradient>'
-                    '<clipPath id="ln"><rect x="0" y="19" width="616" height="6"/><rect x="684" y="19" width="616" height="6"/></clipPath>')
-    sweep = doc.animate(4.5, [(0, "transform:translateX(0)"), (3.15, "transform:translateX(1620px)"), (4.5, "transform:translateX(1620px)")],
-                        ease="cubic-bezier(.45,0,.25,1)")
-    pulse = doc.animate(2.8, [(0, "transform:scale(1)"), (1.4, "transform:scale(.62)"), (2.8, "transform:scale(1)")],
-                        ease="ease-in-out", extra="transform-box:fill-box;transform-origin:center")
-    tint = ""
-    if len(tones) > 1:
-        tint = doc.animate(1.2 * len(tones), [(i * 1.2, f"fill:{t}") for i, t in enumerate(tones)] + [(1.2 * len(tones), f"fill:{tones[0]}")])
-    body = (f'<path d="M0 22H616M684 22H1300" stroke="{HAIR}" stroke-width="1.5"/>'
-            f'<g clip-path="url(#ln)"><rect class="{sweep}" x="-320" y="20.5" width="320" height="3" fill="url(#sw)"/></g>'
-            f'<rect x="620" y="20" width="4" height="4" fill="{HAIR}"/><rect x="676" y="20" width="4" height="4" fill="{HAIR}"/>'
-            f'<g class="{pulse}"><rect{f" class={chr(34)}{tint}{chr(34)}" if tint else ""} x="643" y="15" width="14" height="14" '
-            f'fill="{tones[0]}" transform="rotate(45 650 22)"/></g>')
-    return doc.render(body)
 
 
 def footer():
-    h = 190
-    doc = Doc(WIDTH, h, f"{PROFILE['thanks_zh']} {PROFILE['thanks_en']} X {PROFILE['x_handle']} · {PROFILE['site_label']}")
-    out = [f'<rect width="{WIDTH}" height="{h}" fill="{INK}"/>']
-    size = 12
-    total = len(PROJECTS) * size + (len(PROJECTS) - 1) * 10
-    x0 = WIDTH / 2 - total / 2
-    cycle = 0.5 * len(PROJECTS) + 3
-    for i, p in enumerate(PROJECTS):
-        t = 0.5 * i
-        glow = doc.animate(cycle, [(0, "opacity:.3"), (t, "opacity:.3"), (t + .3, "opacity:1"), (cycle - 1, "opacity:1"),
-                                   (cycle - .4, "opacity:.3"), (cycle, "opacity:.3")])
-        out.append(f'<rect class="{glow}" x="{fmt(x0 + i * (size + 10))}" y="38" width="{size}" height="{size}" fill="{p.color_hex}"/>')
-    out.append(doc.text(PROFILE["thanks_zh"], "bold", 28, WIDTH / 2, 98, fill=PAPER, anchor="middle"))
-    out.append(doc.text(PROFILE["thanks_en"], "serif", 20, WIDTH / 2, 132, fill=PAPER, opacity=".78", anchor="middle"))
-    out.append(doc.text(f"X {PROFILE['x_handle']}  ·  {PROFILE['site_label']}", "mono", 15, WIDTH / 2, 164, fill=DIM,
-                        anchor="middle", tracking=.06))
-    out.append(hairline(h))
+    h = 180
+    doc = themed_doc(WIDTH, h, f"{PROFILE['thanks_zh']} {PROFILE['thanks_en']}")
+    n = len(PROJECTS)
+    out = [breathing_squares(doc, WIDTH / 2 + (n * 10 + (n - 1) * 8) / 2, 30),
+           doc.text(PROFILE["thanks_zh"], "medium", fit(PROFILE["thanks_zh"], "medium", 34, WIDTH), WIDTH / 2, 106,
+                    cls="t", anchor="middle"),
+           doc.text(PROFILE["thanks_en"], "serif", 26, WIDTH / 2, 150, cls="m", anchor="middle")]
     return doc.render("".join(out))
 
 
-def shield(text):
-    return urllib.parse.quote(text.replace("-", "--").replace("_", "__").replace(" ", "_"), safe="")
-
-
-def badge(label, message, color):
-    return (f"https://img.shields.io/badge/{shield(label)}-{shield(message)}-{color.lstrip('#')}"
-            f"?style=for-the-badge&amp;labelColor={INK.lstrip('#')}")
-
-
-def dynamic(path, label, color):
-    return (f"https://img.shields.io/{path}?style=for-the-badge&amp;label={urllib.parse.quote(label)}"
-            f"&amp;color={color.lstrip('#')}&amp;labelColor={INK.lstrip('#')}")
+def button(zh, en, arrow="→", accent=None, filled=False):
+    h, pad = 40, 16
+    fg, sub = ("inv", "inv") if filled else ("t", "m")
+    x = pad
+    square = ""
+    if accent:
+        square = f'<rect x="{x}" y="15" width="10" height="10" fill="{both_themes_tone(accent)}"/>'
+        x += 20
+    zh_x, x = x, x + measure(zh, "medium", 15) + 10
+    en_x, x = x, x + measure(en, "mono", 11, .12) + 12
+    arrow_x, x = x, x + measure(arrow, "mono", 14)
+    w = round(x + pad)
+    doc = themed_doc(w, h, f"{zh} {en}")
+    box = (f'<rect class="bg" width="{w}" height="{h}"/>' if filled
+           else f'<rect class="l" x=".5" y=".5" width="{w - 1}" height="{h - 1}" fill="none"/>')
+    return doc.render(box + square + doc.text(zh, "medium", 15, zh_x, 25.5, cls=fg)
+                      + doc.text(en, "mono", 11, en_x, 24.5, cls=sub, tracking=.12)
+                      + doc.text(arrow, "mono", 14, arrow_x, 25, cls=fg))
 
 
 def link_img(href, src, alt, width=None):
@@ -152,27 +126,24 @@ def link_img(href, src, alt, width=None):
     return f'<a href="{href}"><img src="{src}"{w} alt="{escape(alt)}"></a>'
 
 
+def has_site(p):
+    return not p.cta_url.startswith(p.url)
+
+
 def readme():
-    gold = both_themes_tone(TRADITIONAL["姜黄"])
     lines = [
         link_img(PROFILE["site"], "assets/header.svg",
                  f"{PROFILE['name']} {PROFILE['name_en']} · {PROFILE['slogan_zh']} {PROFILE['slogan_en']}", "100%"),
         "",
-        f"<b>{PROFILE['intro_zh']}</b><br>",
-        f"<b>{PROFILE['intro_en']}</b>",
-        "",
-        link_img(f"{PROFILE['github']}?tab=repositories", dynamic("github/stars/nevertoday", "total stars", gold), "Total stars"),
-        link_img(f"{PROFILE['github']}?tab=followers", dynamic("github/followers/nevertoday", "followers", TRADITIONAL["胭脂红"]),
-                 "Followers"),
-        link_img(PROFILE["x"], badge("X", PROFILE["x_handle"], INK), f"X {PROFILE['x_handle']}"),
-        link_img(PROFILE["site"], badge("website", PROFILE["site_label"], TRADITIONAL["靛青"]), f"Website {PROFILE['site_label']}"),
+        f"{PROFILE['intro_zh']}<br>",
+        PROFILE["intro_en"],
         "",
     ]
     for p in PROJECTS:
-        tone = both_themes_tone(p.color_hex)
+        buttons = [link_img(p.cta_url, f"assets/button-{p.repo}.svg", f"{p.cta_zh} {p.cta_en}")]
+        if has_site(p):
+            buttons.append(link_img(p.url, "assets/button-source.svg", f"{p.name} 源码 GitHub"))
         lines += [
-            f'<img src="assets/divider-{p.repo}.svg" width="100%" alt="Next: {escape(p.name)}">',
-            "",
             f"## {p.name}",
             "",
             link_img(p.url, f"assets/card-{p.repo}.svg", f"{p.name}：{p.slogan_zh} {p.slogan_en}", "100%"),
@@ -180,21 +151,25 @@ def readme():
             f"<b>{p.lead_zh}</b>{p.body_zh}<br>",
             f"<b>{p.lead_en}</b> {p.body_en}",
             "",
-            link_img(p.cta_url, badge(f"▶ {p.cta_en}", p.cta_zh, tone), p.cta_en) + "\n"
-            + link_img(p.url, dynamic(f"github/stars/nevertoday/{p.repo}", p.name, gold), f"{p.name} on GitHub"),
+            "\n".join(buttons),
+            "",
+            "<br>",
             "",
         ]
-    lines += ["<b>更多 / More</b>", ""]
+    lines += ["## 更多 · More", ""]
     lines += [f"- [{name}]({url}) {zh} · {en}" for name, url, zh, en in MORE]
     lines += [
         "",
-        '<img src="assets/divider-end.svg" width="100%" alt="End of the project list">',
+        "<br>",
         "",
-        link_img(PROFILE["x"], "assets/footer.svg",
-                 f"{PROFILE['thanks_zh']} {PROFILE['thanks_en']} X {PROFILE['x_handle']} · {PROFILE['site_label']}", "100%"),
+        link_img(PROFILE["x"], "assets/footer.svg", f"{PROFILE['thanks_zh']} {PROFILE['thanks_en']}", "100%"),
         "",
-        f'<p align="center"><sub>X <a href="{PROFILE["x"]}">{PROFILE["x_handle"]}</a> · '
-        f'<a href="{PROFILE["site"]}">{PROFILE["site_label"]}</a> · 微信 / WeChat <code>{PROFILE["wechat"]}</code></sub></p>',
+        '<p align="center">',
+        link_img(PROFILE["x"], "assets/button-x.svg", f"在 X 上关注我 {PROFILE['x_handle']}"),
+        link_img(PROFILE["site"], "assets/button-site.svg", f"网站 {PROFILE['site_label']}"),
+        "</p>",
+        "",
+        f'<p align="center"><sub>微信 / WeChat <code>{PROFILE["wechat"]}</code></sub></p>',
     ]
     return "\n".join(lines) + "\n"
 
@@ -211,11 +186,13 @@ def write(path, text):
 
 def outputs():
     yield ASSETS / "header.svg", header
-    for i, p in enumerate(PROJECTS):
-        yield ASSETS / f"divider-{p.repo}.svg", lambda p=p: divider([both_themes_tone(p.color_hex)], f"Next: {p.name}")
+    for p in PROJECTS:
         yield ASSETS / f"card-{p.repo}.svg", lambda p=p: card(p)
-    yield ASSETS / "divider-end.svg", lambda: divider([both_themes_tone(p.color_hex) for p in PROJECTS], "End of the project list")
+        yield ASSETS / f"button-{p.repo}.svg", lambda p=p: button(p.cta_zh, p.cta_en, accent=p.color_hex)
+    yield ASSETS / "button-source.svg", lambda: button("源码", "GITHUB", arrow="↗")
     yield ASSETS / "footer.svg", footer
+    yield ASSETS / "button-x.svg", lambda: button("在 X 上关注我", PROFILE["x_handle"].upper(), filled=True)
+    yield ASSETS / "button-site.svg", lambda: button("网站", PROFILE["site_label"].upper(), arrow="↗")
     yield ROOT / "README.md", readme
 
 
